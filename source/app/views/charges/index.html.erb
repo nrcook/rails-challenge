@@ -1,0 +1,73 @@
+<h1>Failed Charges</h1>
+<div class="failed-charges-list">
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @f_transactions.each do |tras| %>
+      <tr>
+        <td><%= tras.customer.first_name + ' ' + tras.customer.last_name %></td>
+        <td><%= tras.amount %></td>
+        <td><%= tras.created %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<h1>Disputed Charges</h1>
+<div class="disputed-charges-list">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @d_transactions.each do |tras| %>
+      <tr>
+        <td><%= tras.customer.first_name + ' ' + tras.customer.last_name %></td>
+        <td><%= tras.amount %></td>
+        <td><%= tras.created %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<h1>Successful Charges</h1>
+<div class="success-charges-list">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="scl">test
+      </tr>
+      <% (0..5).each do |i| %>
+      <tr class="scl">test
+      </tr>
+      <% end %>
+      <% @s_transactions.each do |tras| %>
+      <tr class="scl">
+        <td><%= tras.customer.first_name + ' ' + tras.customer.last_name %></td>
+        <td><%= tras.amount %></td>
+        <td><%= tras.created %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
