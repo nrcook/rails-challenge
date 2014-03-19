@@ -12,7 +12,7 @@ describe "charges/index" do
 
   it 'Verify that in the Successful charges list there are 10 line items', :js => true do
     visit '/'
-    page.all('.success-charges-list').count.should == 10
+    page.all('.success-charges-list .row').count.should == 10
   end
 
 end

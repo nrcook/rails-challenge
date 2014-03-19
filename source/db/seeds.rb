@@ -6,44 +6,45 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # Customers
-customer1 = Customer.find_or_create_by_id(id: 1, first_name: 'Johny', last_name: 'Flow' )
+customer1 = Customer.find_or_create_by(first_name: 'Johny', last_name: 'Flow' )
 
-customer2 = Customer.find_or_create_by_id(id: 2, first_name: 'Raj', last_name: 'Jamnis' )
+customer2 = Customer.find_or_create_by(first_name: 'Raj', last_name: 'Jamnis' )
 
-customer3 = Customer.find_or_create_by_id(id: 3, first_name: 'Andrew', last_name: 'Chung' )
+customer3 = Customer.find_or_create_by(first_name: 'Andrew', last_name: 'Chung' )
 
-customer4 = Customer.find_or_create_by_id(id: 4, first_name: 'Mike', last_name: 'Smith' )
+customer4 = Customer.find_or_create_by(first_name: 'Mike', last_name: 'Smith' )
 
 
 # Seed successful charges
 
-Transaction.find_or_create_by_id(id: 1, created: 1389618241, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: 1, created: Time.now)
-Transaction.find_or_create_by_id(id: 2, created: 1389618241, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: 1, created: Time.now)
-Transaction.find_or_create_by_id(id: 3, created: 1389618241, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: 1, created: Time.now)
-Transaction.find_or_create_by_id(id: 4, created: 1389618241, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: 1, created: Time.now)
-Transaction.find_or_create_by_id(id: 5, created: 1389618241, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: 1, created: Time.now)
+Transaction.find_or_create_by(id: 1, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: customer1.id, created: Time.now)
 
-Transaction.find_or_create_by_id(id: 6, created: 1389618241, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: 2, created: Time.now)
-Transaction.find_or_create_by_id(id: 7, created: 1389618241, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: 2, created: Time.now)
-Transaction.find_or_create_by_id(id: 8, created: 1389618241, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: 2, created: Time.now)
-Transaction.find_or_create_by_id(id: 9, created: 1389618241, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: 3, created: Time.now)
-Transaction.find_or_create_by_id(id: 10, created: 1389618241, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: 4, created: Time.now)
+Transaction.find_or_create_by(id: 2, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: customer1.id, created: Time.now)
+Transaction.find_or_create_by(id: 3, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: customer1.id, created: Time.now)
+Transaction.find_or_create_by(id: 4, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: customer1.id, created: Time.now)
+Transaction.find_or_create_by(id: 5, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: customer1.id, created: Time.now)
+
+Transaction.find_or_create_by(id: 6, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: customer2.id, created: Time.now)
+Transaction.find_or_create_by(id: 7, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: customer2.id, created: Time.now)
+Transaction.find_or_create_by(id: 8, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: customer2.id, created: Time.now)
+Transaction.find_or_create_by(id: 9, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: customer3.id, created: Time.now)
+Transaction.find_or_create_by(id: 10, paid: true, amount: 5, currency: 'usd', refunded: false, customer_id: customer4.id, created: Time.now)
 
 
 
-Transaction.find_or_create_by_id(id: 11, created: 1389618241, paid: false, amount: 3, currency: 'usd', refunded: false, customer_id: 3, created: Time.now)
-Transaction.find_or_create_by_id(id: 12, created: 1389618241, paid: false, amount: 1, currency: 'usd', refunded: false, customer_id: 3, created: Time.now)
-Transaction.find_or_create_by_id(id: 13, created: 1389618241, paid: false, amount: 1, currency: 'usd', refunded: false, customer_id: 3, created: Time.now)
+Transaction.find_or_create_by(id: 11, paid: false, amount: 3, currency: 'usd', refunded: false, customer_id: customer3.id, created: Time.now)
+Transaction.find_or_create_by(id: 12, paid: false, amount: 1, currency: 'usd', refunded: false, customer_id: customer3.id, created: Time.now)
+Transaction.find_or_create_by(id: 13, paid: false, amount: 1, currency: 'usd', refunded: false, customer_id: customer3.id, created: Time.now)
 
-Transaction.find_or_create_by_id(id: 14, created: 1389618241, paid: false, amount: 3, currency: 'usd', refunded: false, customer_id: 4, created: Time.now)
-Transaction.find_or_create_by_id(id: 15, created: 1389618241, paid: false, amount: 1, currency: 'usd', refunded: false, customer_id: 4, created: Time.now)
+Transaction.find_or_create_by(id: 14, paid: false, amount: 3, currency: 'usd', refunded: false, customer_id: customer4.id, created: Time.now)
+Transaction.find_or_create_by(id: 15, paid: false, amount: 1, currency: 'usd', refunded: false, customer_id: customer4.id, created: Time.now)
 
-Transaction.find_or_create_by_id(id: 16, created: 1389618241, paid: true, amount: 3, currency: 'usd', refunded: true, customer_id: 1, created: Time.now)
-Transaction.find_or_create_by_id(id: 17, created: 1389618241, paid: true, amount: 2, currency: 'usd', refunded: true, customer_id: 1, created: Time.now)
-Transaction.find_or_create_by_id(id: 18, created: 1389618241, paid: true, amount: 2, currency: 'usd', refunded: true, customer_id: 1, created: Time.now)
+Transaction.find_or_create_by(id: 16, paid: true, amount: 3, currency: 'usd', refunded: true, customer_id: customer1.id, created: Time.now)
+Transaction.find_or_create_by(id: 17, paid: true, amount: 2, currency: 'usd', refunded: true, customer_id: customer1.id, created: Time.now)
+Transaction.find_or_create_by(id: 18, paid: true, amount: 2, currency: 'usd', refunded: true, customer_id: customer1.id, created: Time.now)
 
-Transaction.find_or_create_by_id(id: 19, created: 1389618241, paid: true, amount: 3, currency: 'usd', refunded: true, customer_id: 2, created: Time.now)
-Transaction.find_or_create_by_id(id: 20, created: 1389618241, paid: true, amount: 2, currency: 'usd', refunded: true, customer_id: 2, created: Time.now)
+Transaction.find_or_create_by(id: 19, paid: true, amount: 3, currency: 'usd', refunded: true, customer_id: customer2.id, created: Time.now)
+Transaction.find_or_create_by(id: 20, paid: true, amount: 2, currency: 'usd', refunded: true, customer_id: customer2.id, created: Time.now)
 
 
 
