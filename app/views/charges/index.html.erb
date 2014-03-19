@@ -1,0 +1,24 @@
+<h1>Listing charges</h1>
+
+<h1> Failed Charges </h1>
+<ul class="failed"> 
+<%@failed.each do |fail|%>
+
+	<li> <%=fail.customer.name%> - $<%=fail.amount%> - <%=fail.created_at.strftime('%d-%m-%Y') %> </li>
+<%end %>
+</ul>
+<h1> Disputed Charges </h1>
+<ul class="disputed"> 
+<%@disputed.each do |dispute|%>
+
+	<li> <%=dispute.customer.name%> - $<%=dispute.amount%> - <%=dispute.created_at.strftime('%d-%m-%Y') %> </li>
+<%end %>
+</ul>
+
+<h1> Successful Charges </h1>
+<ul class="success"> 
+<%@success.each do |success|%>
+
+	<li> $<%=success.amount%> </li>
+<%end %>
+</ul>
