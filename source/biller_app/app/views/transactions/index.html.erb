@@ -1,0 +1,71 @@
+<%- model_class = Transaction -%>
+<div class="page-header">
+  <h1>Failed Charges</h1>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th> Customer Name </th>
+      <th> Amount Charged </th>
+      <th> Transaction Date </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @failed_transactions.each do |transaction| %>
+      <tr class="failed-transactions">
+        <% customer = transaction.customer %>
+        <td><%= "#{customer.first_name} #{customer.last_name}" %></td>
+        <td><%= transaction.amount %></td>
+        <td><%= transaction.created_at.to_s %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="page-header">
+  <h1>Disputed Charges</h1>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th> Customer Name </th>
+    <th> Amount Charged </th>
+    <th> Transaction Date </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @disputed_transactions.each do |transaction| %>
+      <tr class="disputed-transactions">
+        <% customer = transaction.customer %>
+        <td><%= "#{customer.first_name} #{customer.last_name}" %></td>
+        <td><%= transaction.amount %></td>
+        <td><%= transaction.created_at.to_s %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="page-header">
+  <h1>Succesful Charges</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th> Customer Name </th>
+    <th> Amount Charged </th>
+    <th> Transaction Date </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @successful_transactions.each do |transaction| %>
+      <tr>
+        <% customer = transaction.customer %>
+        <td><%= "#{customer.first_name} #{customer.last_name}" %></td>
+        <td><%= transaction.amount %></td>
+        <td><%= transaction.created_at.to_s %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
